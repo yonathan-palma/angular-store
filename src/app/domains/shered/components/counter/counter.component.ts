@@ -36,10 +36,10 @@ export class CounterComponent {
   ngOnInit() {
     // after render una vez
     console.log("ng on init")
-    this.counterRef = window.setInterval(()=> {
-      console.log("interval")
-      this.counter.update(prevState => prevState + 1)
-    }, 1000)
+    // this.counterRef = window.setInterval(()=> {
+    //   console.log("interval")
+    //   this.counter.update(prevState => prevState + 1)
+    // }, 1000)
   }
 
   ngAfterVewInit() {
@@ -49,8 +49,8 @@ export class CounterComponent {
 
   ngOnDestroy() {
     // cuando el componente de desmonta
-    console.log("ng On Destroy")
-    window.clearInterval(this.counterRef)
+    // console.log("ng On Destroy")
+    // window.clearInterval(this.counterRef)
   }
 
   doSomething() {
