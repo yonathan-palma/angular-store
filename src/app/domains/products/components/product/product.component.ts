@@ -3,11 +3,17 @@ import { Product } from '@shered/models/product.model';
 import { CommonModule } from '@angular/common';
 import { ReversePipe } from '@shered/pipes/reverse.pipe';
 import { TomeAgoPipe } from '@shered/pipes/tome-ago.pipe';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, ReversePipe, TomeAgoPipe],
+  imports: [
+    CommonModule, 
+    ReversePipe, 
+    TomeAgoPipe, 
+    RouterLinkWithHref
+  ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })

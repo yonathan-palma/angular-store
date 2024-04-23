@@ -11,7 +11,15 @@ export class ProductService {
 
   private http = inject(HttpClient)
 
-  getProducts() {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products')
+  getProducts(category? :string) {
+    let url = new URL('https://fakestoreapi.com/products')
+    if (category) {
+      url.pathname = `products/category/${category}`
+    }
+    return this.http.get<Product[]>(url.toString())
+  }
+
+  getOne(id: string) {
+    return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`)
   }
 }
